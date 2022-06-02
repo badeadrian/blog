@@ -1,0 +1,4 @@
+name : Blog
+description: Node create
+core_version_requirement: ^8 || ^9
+type: module

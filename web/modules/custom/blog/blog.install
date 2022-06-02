@@ -1,0 +1,35 @@
+<?php
+use Drupal\node\Entity\Node;
+use Drupal\node\Entity\NodeType;
+
+
+function blog_install()
+{
+    $count = 0;
+    do {
+        $node = Node::create(array(
+            'type' => 'blog_post',
+            'title' => 'New blog post',
+            'body' => array(array(
+                'value' => 'Hi there'
+            )),
+            'field_topics'=>'3',
+            'langcode' => 'en',
+            'uid' => '1',
+            'status' => 1
+        ));
+        $node->save();
+        $count++;
+    } while ($count < 5);
+}
+
+
+function blog_uninstall() {
+
+
+    $storage_handler = \Drupal::entityTypeManager()
+        ->getStorage('node');
+    $nodes = $storage_handler->loadByProperties(['type' => 'blog_post']);
+    $storage_handler->delete($nodes);
+
+}
