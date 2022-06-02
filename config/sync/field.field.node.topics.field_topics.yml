@@ -1,0 +1,29 @@
+uuid: 456c1f89-b692-4f13-bd14-b49df8511d02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topics
+    - node.type.topics
+    - taxonomy.vocabulary.topics
+id: node.topics.field_topics
+field_name: field_topics
+entity_type: node
+bundle: topics
+label: Topics
+description: 'Enter the topics your site visitors may be interested in'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      topics: topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

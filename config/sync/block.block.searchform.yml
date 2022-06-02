@@ -1,0 +1,41 @@
+uuid: d9b379a5-684d-4c06-9dfa-1cc50b70257a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - search
+    - user
+  theme:
+    - bartik
+id: searchform
+theme: bartik
+region: header
+weight: -6
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  label_display: visible
+  provider: search
+  page_id: ''
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      blog_post: blog_post
