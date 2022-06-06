@@ -1,4 +1,4 @@
-uuid: bda8dc4a-724e-43e5-a1cb-b1e16624b719
+uuid: 9528bc81-286c-4fb8-89cf-9fc0e6cc753d
 langcode: en
 status: true
 dependencies:
@@ -10,10 +10,10 @@ id: node.blog_post.field_topics
 field_name: field_topics
 entity_type: node
 bundle: blog_post
-label: 'Blog Topics'
+label: Topics
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

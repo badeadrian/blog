@@ -1,10 +1,9 @@
-uuid: 662307be-7193-4fe3-bd6f-e1991b25deea
+uuid: ca291514-1494-4b17-b849-1952c8b2fee7
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.blog_post.body
-    - field.field.node.blog_post.field_summary
     - field.field.node.blog_post.field_topics
     - node.type.blog_post
   module:
@@ -21,14 +20,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_summary:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 103
     region: content
   field_topics:
     type: entity_reference_label

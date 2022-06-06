@@ -1,4 +1,4 @@
-uuid: fda8db4e-f188-4249-84e1-490670ddebff
+uuid: 6a68b3f7-092b-4876-bef5-1ee0af8b9347
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: 'Blog post'
+name: 'Blog Post'
 type: blog_post
 description: ''
 help: ''

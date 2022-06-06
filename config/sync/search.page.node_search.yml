@@ -1,6 +1,6 @@
-uuid: 33200a0c-8da2-46bf-b158-3101ecac22fa
+uuid: b6e8a663-a5a5-485e-a774-1002432a14bc
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - node
@@ -9,7 +9,7 @@ _core:
 id: node_search
 label: Content
 path: node
-weight: -8
+weight: -10
 plugin: node_search
 configuration:
   rankings: {  }

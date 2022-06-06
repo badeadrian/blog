@@ -1,4 +1,4 @@
-uuid: 4a781a9c-e476-43a8-9f55-eeed95c478fd
+uuid: b5b59b57-0d9d-4f59-9d39-d1838b0c59b7
 langcode: en
 status: true
 dependencies:
@@ -25,5 +25,4 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
-  - 'use advanced search'
   - 'use text format basic_html'

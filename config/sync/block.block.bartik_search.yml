@@ -1,18 +1,17 @@
-uuid: a20144fc-86eb-4b90-9dd5-80745408b5fc
+uuid: c993c875-3558-4d99-b33c-41e57a40352c
 langcode: en
 status: true
 dependencies:
   module:
     - search
-    - taxonomy
   theme:
     - bartik
 _core:
   default_config_hash: jQ-C8l3dJPqYCGST1e-kSjR14PDP4wq-iFbp8dMFcRo
 id: bartik_search
 theme: bartik
-region: primary_menu
-weight: -6
+region: sidebar_first
+weight: -1
 provider: null
 plugin: search_form_block
 settings:
@@ -20,12 +19,5 @@ settings:
   label: Search
   label_display: visible
   provider: search
-  page_id: ''
-visibility:
-  'entity_bundle:taxonomy_term':
-    id: 'entity_bundle:taxonomy_term'
-    negate: false
-    context_mapping:
-      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
-    bundles:
-      topics: topics
+  page_id: node_search
+visibility: {  }
