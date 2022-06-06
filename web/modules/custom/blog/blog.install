@@ -1,35 +1,60 @@
 <?php
+
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
+use Drupal\taxonomy\Entity\Term;
 
 
-function blog_install()
-{
-    $count = 0;
-    do {
-        $node = Node::create(array(
-            'type' => 'blog_post',
-            'title' => 'New blog post',
-            'body' => array(array(
-                'value' => 'Hi there'
-            )),
-            'field_topics'=>'3',
-            'langcode' => 'en',
-            'uid' => '1',
-            'status' => 1
-        ));
-        $node->save();
-        $count++;
-    } while ($count < 5);
+function blog_install() {
+
+  $categories = ['Sports', 'Music', 'Film', 'Art', 'Gaming'];
+  $postsTitles = ['Primul', 'Al 2-lea', 'Al 3-lea', 'Al 4-lea', 'Al 5-lea'];
+  $postBody = ['Salut', 'Maine', 'Azi', 'Drupal', 'Php'];
+  $categories_vocabulary = 'topics';
+
+  foreach ($categories as $category) {
+    $proprities = Term::create([
+      'name' => $category,
+      'vid' => $categories_vocabulary,
+    ]);
+    $proprities->save();
+  }
+
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager */
+  $entityTypeManager = \Drupal::service('entity_type.manager');
+  $termStorage = $entityTypeManager->getStorage('taxonomy_term');
+
+  foreach ($postsTitles as $title) {
+
+    $terms = $termStorage->loadByProperties([
+      'name' => array_pop($categories),
+      "vid" => 'topics',
+    ]);
+    /** @var Term $term */
+    $term = reset($terms);
+
+    $node = Node::create([
+      'type' => 'blog_post',
+      'title' => $title,
+      'body' => [
+        [
+          'value' => array_pop($postBody),
+        ],
+      ],
+      'langcode' => 'en',
+      'field_topics' => ['target_id' => $term->id()],
+      'uid' => 1,
+      'status' => 1,
+    ]);
+    $node->save();
+  }
 }
-
 
 function blog_uninstall() {
 
-
-    $storage_handler = \Drupal::entityTypeManager()
-        ->getStorage('node');
-    $nodes = $storage_handler->loadByProperties(['type' => 'blog_post']);
-    $storage_handler->delete($nodes);
+  $storage_handler = \Drupal::entityTypeManager()
+    ->getStorage('node');
+  $nodes = $storage_handler->loadByProperties(['type' => 'blog_post']);
+  $storage_handler->delete($nodes);
 
 }
