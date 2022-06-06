@@ -13,11 +13,11 @@ function blog_install() {
   $categories_vocabulary = 'topics';
 
   foreach ($categories as $category) {
-    $proprities = Term::create([
+    $properties = Term::create([
       'name' => $category,
       'vid' => $categories_vocabulary,
     ]);
-    $proprities->save();
+    $properties->save();
   }
 
   /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager */
