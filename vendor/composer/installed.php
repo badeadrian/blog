@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'af06b397ddae52ecebe55244dcc488dce50612b4',
+        'reference' => '9d0ed71823350467e1366224879a6f1c3932ce9c',
         'name' => 'drupal/recommended-project',
         'dev' => true,
     ),
@@ -222,6 +222,24 @@
             'replaced' => array(
                 0 => '9.3.15',
             ),
+        ),
+        'drupal/bootstrap' => array(
+            'pretty_version' => '3.24.0',
+            'version' => '3.24.0.0',
+            'type' => 'drupal-theme',
+            'install_path' => __DIR__ . '/../../web/themes/contrib/bootstrap',
+            'aliases' => array(),
+            'reference' => '8.x-3.24',
+            'dev_requirement' => false,
+        ),
+        'drupal/bootstrap5' => array(
+            'pretty_version' => '1.1.3',
+            'version' => '1.1.3.0',
+            'type' => 'drupal-theme',
+            'install_path' => __DIR__ . '/../../web/themes/contrib/bootstrap5',
+            'aliases' => array(),
+            'reference' => '1.1.3',
+            'dev_requirement' => false,
         ),
         'drupal/breakpoint' => array(
             'dev_requirement' => false,
@@ -739,7 +757,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'af06b397ddae52ecebe55244dcc488dce50612b4',
+            'reference' => '9d0ed71823350467e1366224879a6f1c3932ce9c',
             'dev_requirement' => false,
         ),
         'drupal/responsive_image' => array(
@@ -1499,6 +1517,15 @@
             'reference' => '2c309e258adeb9970229042be39b360d34986fad',
             'dev_requirement' => false,
         ),
+        'twbs/bootstrap' => array(
+            'pretty_version' => 'v5.0.2',
+            'version' => '5.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twbs/bootstrap',
+            'aliases' => array(),
+            'reference' => '688bce4fa695cc360a0d084e34f029b0c192b223',
+            'dev_requirement' => false,
+        ),
         'twig/twig' => array(
             'pretty_version' => 'v2.14.11',
             'version' => '2.14.11.0',
@@ -1507,6 +1534,12 @@
             'aliases' => array(),
             'reference' => '66baa66f29ee30e487e05f1679903e36eb01d727',
             'dev_requirement' => false,
+        ),
+        'twitter/bootstrap' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'v5.0.2',
+            ),
         ),
         'typo3/phar-stream-wrapper' => array(
             'pretty_version' => 'v3.1.7',

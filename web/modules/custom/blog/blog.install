@@ -50,8 +50,9 @@ function blog_install() {
         $node->save();
       }
     } catch (Exception $e){
-      echo $e = '| Node not created |';
-
+      $x = 'test';
+      print("| Node not created {$x} |\n");
+      \Drupal::messenger()->addError('test');
     }
   }
 }
