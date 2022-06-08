@@ -1,4 +1,4 @@
-uuid: b96ec9a8-5fc0-4a8e-8d9b-35d2ec58d162
+uuid: ae82d01d-76f6-4bb0-acfb-a3f4ed36f802
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: 3R3ANwFes0X_RxYQ3tJSDh40KRJKJdJuvWoOGqcLKS4
+  default_config_hash: HWTeeLWaFus7-6nyYtWkQN6frwbGDBrPVMVExFt7qX8
 id: node.blog_post.body
 field_name: body
 entity_type: node
@@ -17,7 +17,11 @@ label: Body
 description: ''
 required: false
 translatable: true
-default_value: {  }
+default_value:
+  -
+    value: "<p>Apar</p>\r\n"
+    summary: ''
+    format: basic_html
 default_value_callback: ''
 settings:
   display_summary: true

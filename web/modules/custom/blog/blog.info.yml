@@ -5,3 +5,7 @@ type: module
 dependencies:
   - node
   - taxonomy
+  - field
+  - filter
+  - user
+  - text

@@ -1,4 +1,4 @@
-uuid: 0003cc3f-4f0a-407f-948e-ae157eaa3728
+uuid: 2bd3ee2c-f3b2-4912-8a87-109304bf62d4
 langcode: en
 status: true
 dependencies:
@@ -10,23 +10,31 @@ dependencies:
   module:
     - text
     - user
+_core:
+  default_config_hash: 7ARkTdfSyjpOuaPd6JQ5z1xQ9Tcn2vsiZqY9tNHPuU0
 id: node.blog_post.teaser
 targetEntityType: node
 bundle: blog_post
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: text_default
     label: above
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_topics:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-hidden:
-  field_topics: true
+hidden: {  }

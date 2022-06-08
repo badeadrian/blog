@@ -1,9 +1,9 @@
-uuid: 6735139d-f3eb-4b26-ad5a-e6efd756a9fc
+uuid: ccad5ab6-b29e-4212-b026-1adda2a552fc
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: BLEhxZ58xAORprfJAiccBB48D2V0KbQG6bQ0nSYhMoE
+  default_config_hash: njlXPXDthksket0FpExF-7DQx9wRPANR1dYN64tunOU
 name: Topics
 vid: topics
 description: ''

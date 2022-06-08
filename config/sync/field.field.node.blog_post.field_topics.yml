@@ -1,4 +1,4 @@
-uuid: 9528bc81-286c-4fb8-89cf-9fc0e6cc753d
+uuid: 51d21e9c-e06b-4eef-b57e-770f7c81d8cc
 langcode: en
 status: true
 dependencies:
@@ -7,14 +7,14 @@ dependencies:
     - node.type.blog_post
     - taxonomy.vocabulary.topics
 _core:
-  default_config_hash: GruogWSgjsS2F6U28SXUEszDX_xM-Kix1eydN8Iu3RQ
+  default_config_hash: IsWDt23WuocNfs6CEdWCufeXyRd7FHaCkeQhKY73WWY
 id: node.blog_post.field_topics
 field_name: field_topics
 entity_type: node
 bundle: blog_post
 label: Topics
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

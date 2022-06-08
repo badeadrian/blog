@@ -1,0 +1,24 @@
+uuid: e3289fc5-3fd6-4b12-b80f-25bd595c8082
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.blog_post
+_core:
+  default_config_hash: sGRHdVeEUbORkvYgbSOBlXF8aUPOUNHUrtReyvqzOAs
+id: node.blog_post.promote
+field_name: promote
+entity_type: node
+bundle: blog_post
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

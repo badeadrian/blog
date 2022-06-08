@@ -1,12 +1,10 @@
 <?php
 
 use Drupal\node\Entity\Node;
-use Drupal\node\Entity\NodeType;
 use Drupal\taxonomy\Entity\Term;
 
 
 function blog_install() {
-
   $categories = ['Sports', 'Music', 'Film', 'Art', 'Gaming'];
   $postsTitles = ['Primul', 'Al 2-lea', 'Al 3-lea', 'Al 4-lea', 'Al 5-lea'];
   $postBody = ['Salut', 'Maine', 'Azi', 'Drupal', 'Php'];
@@ -36,17 +34,25 @@ function blog_install() {
     $node = Node::create([
       'type' => 'blog_post',
       'title' => $title,
-      'body' => [
-        [
-          'value' => array_pop($postBody),
-        ],
-      ],
       'langcode' => 'en',
       'field_topics' => ['target_id' => $term->id()],
       'uid' => 1,
       'status' => 1,
-    ]);
-    $node->save();
+      'body' => [
+        [
+          'value' => array_pop($postBody),
+        ],
+    ]]);
+
+    try {
+      $v = $node->validate();
+      if (!$v->count()) {
+        $node->save();
+      }
+    } catch (Exception $e){
+      echo $e = '| Node not created |';
+
+    }
   }
 }
 
